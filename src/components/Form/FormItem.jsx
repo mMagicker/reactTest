@@ -27,7 +27,6 @@ const FormItem = (props) => {
 	}
 	let internalChildren = React.cloneElement(children, getItem())
 
-	console.log(getItemValue(name))
 	let errorMessage = getItemMessage([name])
 
 	return (
