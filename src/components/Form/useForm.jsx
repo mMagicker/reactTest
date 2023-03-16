@@ -8,7 +8,7 @@ class FormStore {
 
 	getItemValue = (name) => {
 		let _store = this.store
-		return _store[name]
+		return _store[name] || ""
 	}
 
 	registerItem = (item) => {
