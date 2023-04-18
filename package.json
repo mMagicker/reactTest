@@ -10,12 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@types/html-docx-js": "^0.3.1",
+    "@types/react-router-dom": "^5.3.3",
+    "antd": "^5.4.2",
+    "crypto-js": "^4.1.1",
+    "file-saver": "^2.0.5",
+    "html-docx-js": "^0.3.1",
+    "html-docx-js-typescript": "^0.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "react-sortable-hoc": "^2.0.0",
     "sass": "^1.53.0",
     "scss": "^0.2.4"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
     "@types/node": "^18.6.4",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
