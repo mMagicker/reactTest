@@ -3,7 +3,7 @@
  */
 import React, { useState, useRef } from "react";
 
-const StateRef: React.FC = () => {
+const StateRef = () => {
 
 	const [state, setState] = useState({ a: { b: 1 } })
 	const stateRef = useRef({})

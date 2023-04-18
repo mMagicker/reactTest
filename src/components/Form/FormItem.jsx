@@ -17,10 +17,12 @@ const FormItem = (props) => {
 	}, [])
 
 	const getItem = () => {
+		console.log(getItemValue(name))
 		return {
 			value: getItemValue(name),
 			onChange: (e) => {
 				const _v = e.target.value
+				console.log(_v)
 				setItemValue({ [name]: _v })
 			},
 		}
