@@ -1,5 +1,5 @@
 // 实现一个每个单元格都可以选择的table
-import React, {useState} from 'react';
+import React, { useState, } from 'react';
 import './SelectedTable.scss'
 
 function SelectableTable() {
@@ -61,36 +61,43 @@ function SelectableTable() {
     const {id} = row
     const _newId = `${id}-${dataIndex}`
     const _ids = [...selectedIds]
-    if (_ids.includes(_newId)) {
+    if(_ids.includes(_newId)) {
       setSelectedIds(_ids.filter(id => id !== _newId))
-    }else{
+    } else {
       setSelectedIds([..._ids, _newId])
     }
   }
+
+  // ------
+
   return (
-    <table>
-      <thead>
-      <tr>
-        {
-          columns.map((column, index) => (
-            <th key={index}>{column.title}</th>
-          ))
-        }
-      </tr>
-      </thead>
-      <tbody>
-      {data.map((row, rowIndex) => (
-        <tr key={rowIndex}>
-          {
-            columns.map((column, columnIndex) => (
-              <td className={selectedIds.includes(`${row.id}-${column.dataIndex}`) ? "selected" : ""}
-                  onClick={() => onTdClick(row, column.dataIndex)} key={columnIndex}>{row[column.dataIndex]}</td>
-            ))
-          }
-        </tr>
-      ))}
-      </tbody>
-    </table>
+    <div className="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            {
+              columns.map((column, index) => (
+                <th key={index}>{column.title}</th>
+              ))
+            }
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {
+                columns.map((column, columnIndex) => (
+                  <td
+                    className={selectedIds.includes(`${row.id}-${column.dataIndex}`) ? "selected" : ""}
+                    onClick={() => onTdClick(row, column.dataIndex)} key={columnIndex}
+                  >{row[column.dataIndex]}</td>
+                ))
+              }
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

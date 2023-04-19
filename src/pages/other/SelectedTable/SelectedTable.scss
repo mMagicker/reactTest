@@ -1,3 +1,15 @@
-.selected{
-  color: red;
+.selected {
+	color: red;
+}
+
+.table2 {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+
+	th, td {
+		width: 120px;
+		height: 32px;
+		border: 1px solid #ccc;
+		border-collapse: collapse;
+	}
 }

@@ -61,6 +61,21 @@ const routes: Route[] = [
         path: "/drag",
         name: "Drag",
         component: pages.other.Drag
+      },
+      {
+        path: "/selectedTable",
+        name: "SelectedTable",
+        component: pages.other.SelectedTable
+      },
+      {
+        path: "/tableRow",
+        name: "TableRow",
+        component: pages.other.TableRow
+      },
+      {
+        path: "/selectedTableAntd",
+        name: "SelectedTableAntd",
+        component: pages.other.SelectedTableAntd
       }
     ]
   }

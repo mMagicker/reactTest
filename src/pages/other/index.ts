@@ -1,9 +1,11 @@
-import IframePage from "./Iframe/IframePage";
-import { IframeSon1, IframeSon2, IframeSon3 } from "@/pages/Other/Iframe/IframeSon";
+import Drag from './Drag'
+import SelectedTable from "@/pages/other/SelectedTable";
+import SelectedTableAntd from "@/pages/other/SelectedTableAntd";
+import TableRow from './TableRow'
 
 export default {
-	IframePage,
-	IframeSon1,
-	IframeSon2,
-	IframeSon3
+  Drag,
+  SelectedTable,
+  SelectedTableAntd,
+  TableRow
 }
