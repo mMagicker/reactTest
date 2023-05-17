@@ -1,5 +1,5 @@
-import pages from '@/pages'
-import React from 'react'
+import pages from "@/pages";
+import React from "react";
 
 export interface Route {
   path: string;
@@ -16,9 +16,9 @@ const routes: Route[] = [
       {
         path: "/context",
         name: "Context",
-        component: pages.react.Context
+        component: pages.react.Context,
       },
-    ]
+    ],
   },
   {
     path: "/router",
@@ -27,9 +27,9 @@ const routes: Route[] = [
       {
         path: "/prompt",
         name: "Prompt",
-        component: pages.router.Prompt
-      }
-    ]
+        component: pages.router.Prompt,
+      },
+    ],
   },
   {
     path: "/lib",
@@ -38,9 +38,14 @@ const routes: Route[] = [
       {
         path: "/crypto",
         name: "Crypto",
-        component: pages.lib.Crypto
-      }
-    ]
+        component: pages.lib.Crypto,
+      },
+      {
+        path: "/g6",
+        name: "G6",
+        component: pages.lib.G6,
+      },
+    ],
   },
   {
     path: "/source",
@@ -49,35 +54,35 @@ const routes: Route[] = [
       {
         path: "/formPage",
         name: "FormPage",
-        component: pages.source.FormPage
-      }
-    ]
+        component: pages.source.FormPage,
+      },
+    ],
   },
   {
-    path: 'other',
-    name: 'other',
+    path: "other",
+    name: "other",
     children: [
       {
         path: "/drag",
         name: "Drag",
-        component: pages.other.Drag
+        component: pages.other.Drag,
       },
       {
         path: "/selectedTable",
         name: "SelectedTable",
-        component: pages.other.SelectedTable
+        component: pages.other.SelectedTable,
       },
       {
         path: "/tableRow",
         name: "TableRow",
-        component: pages.other.TableRow
+        component: pages.other.TableRow,
       },
       {
         path: "/selectedTableAntd",
         name: "SelectedTableAntd",
-        component: pages.other.SelectedTableAntd
-      }
-    ]
-  }
-]
+        component: pages.other.SelectedTableAntd,
+      },
+    ],
+  },
+];
 export default routes;
