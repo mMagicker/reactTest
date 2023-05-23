@@ -12,7 +12,7 @@ export const data = {
         },
         {
           id: 'c1-2',
-          label: 'c1-2',
+          label: 'c1-22222222222222222',
           children: [
             {
               id: 'c1-2-1',

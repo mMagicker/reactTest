@@ -97,6 +97,17 @@ export default function G6Page() {
           name: "remove-item",
         });
 
+        group.addShape("text", {
+          attrs: {
+            x: 10,
+            y: 10,
+            textAlign: "left",
+            textBaseline: "top",
+            text: "\u10118" 
+          },
+
+        })
+
         if (cfg.label) {
           group.addShape("text", {
             attrs: {
@@ -131,6 +142,12 @@ export default function G6Page() {
             ["L", endPoint.x, (startPoint.y + endPoint.y) / 2],
             ["L", endPoint.x, endPoint.y],
           ],
+          path: [
+            ["M", startPoint.x, startPoint.y],
+            ["L", (startPoint.x + endPoint.x) / 2, startPoint.y],
+            ["L", (startPoint.x + endPoint.x) / 2, endPoint.y],
+            ["L", endPoint.x, endPoint.y],
+          ]
         },
       });
 
