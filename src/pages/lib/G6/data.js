@@ -1,136 +1,115 @@
 export const data = {
-  id: 'root',
-  label: 'root',
-  children: [
+  nodes: [
     {
-      id: 'c1',
-      label: 'c1',
-      children: [
-        {
-          id: 'c1-1',
-          label: 'c1-1',
-        },
-        {
-          id: 'c1-2',
-          label: 'c1-22222222222222222',
-          children: [
-            {
-              id: 'c1-2-1',
-              label: 'c1-2-1',
-            },
-            {
-              id: 'c1-2-2',
-              label: 'c1-2-2',
-            },
-          ],
-        },
-      ],
+      id: '1',
+      label: 'Company1',
     },
     {
-      id: 'c2',
-      label: 'c2',
+      id: '2',
+      label: 'Company2',
     },
     {
-      id: 'c3',
-      label: 'c3',
-      children: [
-        {
-          id: 'c3-1',
-          label: 'c3-1',
-        },
-        {
-          id: 'c3-2',
-          label: 'c3-2',
-          children: [
-            {
-              id: 'c3-2-1',
-              label: 'c3-2-1',
-            },
-            {
-              id: 'c3-2-2',
-              label: 'c3-2-2',
-            },
-            {
-              id: 'c3-2-3',
-              label: 'c3-2-3',
-            },
-          ],
-        },
-        {
-          id: 'c3-3',
-          label: 'c3-3',
-        },
-      ],
+      id: '3',
+      label: 'Company3',
+    },
+    {
+      id: '4',
+      label: 'Company4',
+    },
+    {
+      id: '5',
+      label: 'Company5',
+    },
+    {
+      id: '6',
+      label: 'Company6',
+    },
+    {
+      id: '7',
+      label: 'Company7',
+    },
+    {
+      id: '8',
+      label: 'Company8',
+    },
+    {
+      id: '9',
+      label: 'Company9',
     },
   ],
-}
-
-export const defaultStateStyles = {
-  hover: {
-    stroke: '#1890ff',
-    lineWidth: 2,
-  },
+  edges: [
+    {
+      source: '1',
+      target: '2',
+      data: {
+        type: 'A',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '1',
+      target: '3',
+      data: {
+        type: 'B',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '2',
+      target: '5',
+      data: {
+        type: 'C',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '5',
+      target: '6',
+      data: {
+        type: 'B',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '3',
+      target: '4',
+      data: {
+        type: 'C',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '4',
+      target: '7',
+      data: {
+        type: 'B',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '1',
+      target: '8',
+      data: {
+        type: 'B',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+    {
+      source: '1',
+      target: '9',
+      data: {
+        type: 'C',
+        amount: '100,000 Yuan',
+        date: '2019-08-03',
+      },
+    },
+  ],
 };
 
-export const defaultNodeStyle = {
-  fill: '#91d5ff',
-  stroke: '#40a9ff',
-  radius: 5,
-};
-
-export const defaultEdgeStyle = {
-  stroke: '#91d5ff',
-  endArrow: {
-    path: 'M 0,0 L 12, 6 L 9,0 L 12, -6 Z',
-    fill: '#91d5ff',
-    d: -20,
-  },
-};
-
-export const defaultLayout = {
-  type: 'compactBox',
-  direction:"LR",
-  getId: function getId(d) {
-    return d.id;
-  },
-  getHeight: function getHeight() {
-    return 16;
-  },
-  getWidth: function getWidth() {
-    return 16;
-  },
-  getVGap: function getVGap() {
-    return 40;
-  },
-  getHGap: function getHGap() {
-    return 70;
-  },
-};
-
-export const defaultLabelCfg = {
-  style: {
-    fill: '#000',
-    fontSize: 12,
-  },
-};
-
-export const COLLAPSE_ICON = function COLLAPSE_ICON(x, y, r) {
-  return [
-    ['M', x - r, y - r],
-    ['a', r, r, 0, 1, 0, r * 2, 0],
-    ['a', r, r, 0, 1, 0, -r * 2, 0],
-    ['M', x + 2 - r, y - r],
-    ['L', x + r - 2, y - r],
-  ];
-};
-export const EXPAND_ICON = function EXPAND_ICON(x, y, r) {
-  return [
-    ['M', x - r, y - r],
-    ['a', r, r, 0, 1, 0, r * 2, 0],
-    ['a', r, r, 0, 1, 0, -r * 2, 0],
-    ['M', x + 2 - r, y - r],
-    ['L', x + r - 2, y - r],
-    ['M', x, y - 2 * r + 2],
-    ['L', x, y - 2],
-  ];
-};

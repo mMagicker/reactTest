@@ -2,190 +2,196 @@ import React, { useRef, useEffect } from "react";
 import G6 from "@antv/g6";
 import {
   data,
-  defaultEdgeStyle,
-  defaultLabelCfg,
-  defaultLayout,
-  defaultNodeStyle,
-  defaultStateStyles,
-  EXPAND_ICON,
-  COLLAPSE_ICON,
 } from "./data";
+import { Button } from "antd";
 
 export default function G6Page() {
   const g6Wrap = useRef(null);
+  const graphRef = useRef(null);
 
-  G6.registerNode(
-    "icon-node",
-    {
-      options: {
-        size: [60, 20],
-        stroke: "#91d5ff",
-        fill: "#91d5ff",
-      },
-      draw(cfg, group) {
-        const styles = this.getShapeStyle(cfg);
-        const { labelCfg = {} } = cfg;
-
-        const w = styles.width;
-        const h = styles.height;
-
-        const keyShape = group.addShape("rect", {
-          attrs: {
-            ...styles,
-            x: -w / 2,
-            y: -h / 2,
-          },
-        });
-
-        /**
-         * leftIcon 格式如下：
-         *  {
-         *    style: ShapeStyle;
-         *    img: ''
-         *  }
-         */
-        // console.log("cfg.leftIcon", cfg.leftIcon);
-        if (cfg.leftIcon) {
-          const { style, img } = cfg.leftIcon;
-          group.addShape("rect", {
-            attrs: {
-              x: 1 - w / 2,
-              y: 1 - h / 2,
-              width: 38,
-              height: styles.height - 2,
-              fill: "#8c8c8c",
-              ...style,
-            },
-          });
-
-          group.addShape("image", {
-            attrs: {
-              x: 8 - w / 2,
-              y: 8 - h / 2,
-              width: 24,
-              height: 24,
-              img:
-                img ||
-                "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png",
-            },
-            name: "image-shape",
-          });
-        }
-
-        // 如果不需要动态增加或删除元素，则不需要 add 这两个 marker
-        group.addShape("marker", {
-          attrs: {
-            x: 40 - w / 2,
-            y: 52 - h / 2,
-            r: 6,
-            stroke: "#73d13d",
-            cursor: "pointer",
-            symbol: EXPAND_ICON,
-          },
-          name: "add-item",
-        });
-
-        group.addShape("marker", {
-          attrs: {
-            x: 80 - w / 2,
-            y: 52 - h / 2,
-            r: 6,
-            stroke: "#ff4d4f",
-            cursor: "pointer",
-            symbol: COLLAPSE_ICON,
-          },
-          name: "remove-item",
-        });
-
-        group.addShape("text", {
-          attrs: {
-            x: 10,
-            y: 10,
-            textAlign: "left",
-            textBaseline: "top",
-            text: "\u10118" 
-          },
-
-        })
-
-        if (cfg.label) {
-          group.addShape("text", {
-            attrs: {
-              ...labelCfg.style,
-              text: cfg.label,
-              x: 50 - w / 2,
-              y: 25 - h / 2,
-            },
-          });
-        }
-
-        return keyShape;
-      },
-      update: undefined,
+  const globalData = useRef({
+    g6Data: {
+      nodes: [],
+      edges: []
     },
-    "rect"
-  );
+    temp: 1
+  })
+  const editCb = (cfg) => {
+    const { id } = cfg;
+    const { g6Data } = globalData.current;
+    const { nodes, edges } = g6Data;
+    const data = {
+      nodes: [
+        ...nodes,
+        {
+          id: String(id),
+          label: "编辑了",
+          area_name: "编辑了"
+        }
+      ],
+      edges: []
+    }
+    globalData.current.g6Data = data;
+    graphRef.current.changeData(data);
+    graphRef.current.render()
+  }
 
-  G6.registerEdge("flow-line", {
-    draw(cfg, group) {
-      const startPoint = cfg.startPoint;
-      const endPoint = cfg.endPoint;
-
-      const { style } = cfg;
-      const shape = group.addShape("path", {
-        attrs: {
-          stroke: style.stroke,
-          endArrow: style.endArrow,
-          path: [
-            ["M", startPoint.x, startPoint.y],
-            ["L", startPoint.x, (startPoint.y + endPoint.y) / 2],
-            ["L", endPoint.x, (startPoint.y + endPoint.y) / 2],
-            ["L", endPoint.x, endPoint.y],
-          ],
-          path: [
-            ["M", startPoint.x, startPoint.y],
-            ["L", (startPoint.x + endPoint.x) / 2, startPoint.y],
-            ["L", (startPoint.x + endPoint.x) / 2, endPoint.y],
-            ["L", endPoint.x, endPoint.y],
-          ]
-        },
-      });
-
-      return shape;
-    },
-  });
   useEffect(() => {
-    const container = g6Wrap.current;
-    const width = container.scrollWidth;
-    const height = container.scrollHeight || 500;
+    G6.registerNode(
+      'round-rect',
+      {
+        drawShape: function drawShape(cfg, group) {
+          const r = 4;
+          // 背景
+          const shape = group.addShape('rect', {
+            attrs: {
+              x: 0,
+              y: 0,
+              fill: "#ccc",
+              width: 200,
+              height: 78,
+              stroke: "#aaa",
+              radius: r,
+              shadowBlur: 12,
+              shadowOffsetX: 0,
+              shadowOffsetY: 6,
+              shadowColor: "rgba(22,56,125,0.10)",
+            },
+            name: 'main-box',
+          });
 
-    const graph = new G6.TreeGraph({
-      container: container,
+          // title text
+          group.addShape('text', {
+            attrs: {
+              text: cfg.area_name,
+              x: 20,
+              y: 26,
+              fontSize: 16,
+              textAlign: 'left',
+              textBaseline: 'middle',
+              fill: "blue"
+            },
+            name: 'area_name',
+          });
+
+          //修改 
+          const edit = group.addShape('text', {
+            attrs: {
+              id: 'node-icon',
+              x: 70,
+              y: 55,
+              fill: "red",
+              fontSize: 20,
+              textAlign: 'center',
+              textBaseline: 'middle',
+              text: "cc",
+            },
+            name: "edit"
+          });
+
+          edit.on('click', function () {
+            editCb(cfg)
+          })
+
+          return shape;
+        },
+      },
+      'single-node',
+    );
+
+    const width = g6Wrap.current.offsetWidth;
+    const height = g6Wrap.current.offsetHeight;
+    const graph = new G6.Graph({
+      container: g6Wrap.current,
       width,
       height,
-      linkCenter: true,
+      layout: {
+        type: 'dagre',
+        rankdir: 'LR',
+        nodesep: 30,
+        ranksep: 100,
+      },
       modes: {
-        default: ["drag-canvas", "zoom-canvas"],
+        default: ['drag-canvas'],
       },
       defaultNode: {
-        type: "icon-node",
-        size: [120, 40],
-        style: defaultNodeStyle,
-        labelCfg: defaultLabelCfg,
+        type: 'round-rect',
+        labelCfg: {
+          style: {
+            fill: '#000000A6',
+            fontSize: 10,
+          },
+        },
+        style: {
+          stroke: '#72CC4A',
+          width: 150,
+        },
       },
       defaultEdge: {
-        type: "flow-line",
-        style: defaultEdgeStyle,
+        type: 'fund-polyline',
       },
-      nodeStateStyles: defaultStateStyles,
-      edgeStateStyles: defaultStateStyles,
-      layout: defaultLayout,
     });
 
-    graph.data(data);
+    const g6_data = JSON.parse(JSON.stringify(globalData.current.g6Data));
+    graph.data(g6_data);
     graph.render();
-    graph.fitView();
+
+    graphRef.current = graph;
   }, []);
 
-  return <div ref={g6Wrap} style={{ width: "calc(100% - 300px)", height: "100vh" }}></div>;
+  const onAdd = () => {
+    const { g6Data, temp } = globalData.current;
+    const { nodes, edges } = g6Data;
+    const id = temp + 1
+    const data = {
+      nodes: [
+        ...nodes,
+        {
+          id: String(id),
+          label: "新增了",
+          area_name: "新增了"
+        }
+      ],
+      edges: [
+        ...edges,
+      ]
+    }
+    globalData.current.temp = id;
+    globalData.current.g6Data = data;
+    graphRef.current.changeData(data);
+  }
+
+  const onRemove = () => {
+    const data = {
+      nodes: [],
+      edges: []
+    }
+    globalData.current.g6Data = data;
+    graphRef.current.changeData(data);
+
+  }
+  const onEdit = () => {
+    const { g6Data } = globalData.current;
+    const { nodes, edges } = g6Data;
+    const data = {
+      nodes: [
+        ...nodes,
+        {
+          id: "11",
+          label: "编辑了"
+        }
+      ],
+      edges: [
+      ]
+    }
+    globalData.current.g6Data = data;
+    graphRef.current.changeData(data);
+  }
+
+  return <>
+    <Button onClick={onAdd}>add</Button>
+    <Button onClick={onEdit}>edit</Button>
+    <Button onClick={onRemove}>remove</Button>
+    <div ref={g6Wrap} style={{ width: "calc(100% - 300px)", height: "100vh" }}></div>;
+  </>
 }
