@@ -18,6 +18,11 @@ const routes: Route[] = [
         name: "Context",
         component: pages.react.Context
       },
+      {
+        path: '/refProps',
+        name: 'RefProps',
+        component: pages.react.RefProps
+      }
     ]
   },
   {
@@ -39,6 +44,16 @@ const routes: Route[] = [
         path: "/crypto",
         name: "Crypto",
         component: pages.lib.Crypto
+      },
+      {
+        path: "/html2canvas",
+        name: "Html2canvas",
+        component: pages.lib.Html2Canvas
+      },
+      {
+        path: "/html2word",
+        name: "Html2Word",
+        component: pages.lib.HtmlToWord
       }
     ]
   },
