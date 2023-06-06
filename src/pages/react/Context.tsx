@@ -26,7 +26,7 @@ const ContextSon = () => {
   };
   console.log(data);
   return (
-    <div>
+    <div className="content">
       <p>{data}</p>
       <button onClick={onBtnClick}>click</button>
     </div>

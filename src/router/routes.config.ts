@@ -45,6 +45,16 @@ const routes: Route[] = [
         name: "G6",
         component: pages.lib.G6,
       },
+      {
+        path: "/tinymce",
+        name: "Tinymce",
+        component: pages.lib.Tinymce,
+      },
+      {
+        path: "/ckeditor",
+        name: "CKEditor",
+        component: pages.lib.CKEditor
+      }
     ],
   },
   {
@@ -81,6 +91,11 @@ const routes: Route[] = [
         path: "/selectedTableAntd",
         name: "SelectedTableAntd",
         component: pages.other.SelectedTableAntd,
+      },
+      {
+        path: "/lazyScroll",
+        name: "LazyScroll",
+        component: pages.other.LazyScroll,
       },
     ],
   },

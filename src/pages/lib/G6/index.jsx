@@ -4,10 +4,16 @@ import {
   data,
 } from "./data";
 import { Button } from "antd";
+import {
+  getIcon
+} from './utils'
+
+
 
 export default function G6Page() {
   const g6Wrap = useRef(null);
   const graphRef = useRef(null);
+
 
   const globalData = useRef({
     g6Data: {
@@ -77,16 +83,29 @@ export default function G6Page() {
           //修改 
           const edit = group.addShape('text', {
             attrs: {
-              id: 'node-icon',
-              x: 70,
-              y: 55,
-              fill: "red",
-              fontSize: 20,
+              x: 100,
+              y: 20,
+              fontFamily: 'iconfont', // 对应css里面的font-family: "iconfont";
               textAlign: 'center',
               textBaseline: 'middle',
-              text: "cc",
+              // text: "\u1012b",
+              text: getIcon('发送'),
+              fontSize: 30,
+              fill: "red"
             },
-            name: "edit"
+            // must be assigned in G6 3.3 and later versions. it can be any value you want
+            name: 'text-shape1',
+            // attrs: {
+            //   id: 'node-icon',
+            //   x: 70,
+            //   y: 55,
+            //   fill: "red",
+            //   fontSize: 20,
+            //   textAlign: 'center',
+            //   textBaseline: 'middle',
+            //   text: "cc",
+            // },
+            // name: "edit"
           });
 
           edit.on('click', function () {
@@ -135,6 +154,10 @@ export default function G6Page() {
     const g6_data = JSON.parse(JSON.stringify(globalData.current.g6Data));
     graph.data(g6_data);
     graph.render();
+
+    setTimeout(() => {
+      graph.paint();
+    }, 160)
 
     graphRef.current = graph;
   }, []);

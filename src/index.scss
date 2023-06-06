@@ -1,3 +1,4 @@
+// @import './assets/fonts/iconfont.css';
 * {
   margin: 0;
   padding: 0;
@@ -22,14 +23,21 @@ a {
       &-name {
         color: #666;
       }
-      .list{
+      .list {
         padding-left: 20px;
-        a{
+        a {
           display: block;
           padding: 2px 0;
         }
       }
-
     }
+  }
+  .app_content {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #eee;
+    border-radius: 4px;
   }
 }
