@@ -171,6 +171,12 @@ const TableRow = () => {
 
   return <div className="table-row">
     <table>
+      <colgroup>
+        <col style={{width:100}} />
+        <col style={{width:100}} />
+        <col style={{width:100}} />
+        <col style={{width:100}} />
+      </colgroup>
       <thead>
         <tr>
           <th>一级</th>

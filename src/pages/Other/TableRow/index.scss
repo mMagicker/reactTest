@@ -1,4 +1,14 @@
 .table-row {
+	width: 600px;
+	height: 400px;
+	overflow-y: auto;
+	table {
+		width: 100%;
+	}
+	thead {
+		position: sticky;
+		top: 0;
+	}
 	table, th, td {
 		border: 1px solid #ccc;
 		border-collapse: collapse;

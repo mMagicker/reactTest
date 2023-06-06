@@ -6,6 +6,7 @@ import StateRef2 from './StateRef2'
 import ThisTest from "./ThisTest";
 import ThisTest2 from "./ThisTest2";
 import UseMemoCom from './UseMemoCom'
+import RefProps from "@/pages/react/RefProps";
 
 export default {
   Context,
@@ -15,5 +16,6 @@ export default {
   StateRef2,
   ThisTest,
   ThisTest2,
-  UseMemoCom
+  UseMemoCom,
+  RefProps
 }
