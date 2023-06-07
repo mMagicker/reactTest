@@ -69,6 +69,11 @@ const routes: Route[] = [
         path: "/ckeditor",
         name: "CKEditor",
         component: pages.lib.CKEditor
+      },
+      {
+        path: "/wangEditor",
+        name: "WangEditor",
+        component: pages.lib.Wang
       }
     ],
   },
