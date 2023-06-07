@@ -56,6 +56,11 @@ const routes: Route[] = [
         component: pages.lib.HtmlToWord,
       },
       {
+        path: "/html2pdf",
+        name: "Html2PDF",
+        component: pages.lib.Html2PDF,
+      },
+      {
         path: "/g6",
         name: "G6",
         component: pages.lib.G6,

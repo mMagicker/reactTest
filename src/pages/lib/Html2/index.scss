@@ -1,0 +1,25 @@
+.export-content{
+  border: 1px solid #ccc;
+  .page-break{
+    page-break-after: always;
+  }
+  ul{
+    padding-left: 100px;
+    li{
+      margin-bottom: 10px;
+      list-style: none;
+      font-family: "霞鹜文楷";
+      font-size: 30px;
+    }
+  }
+  table{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    th,td{
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+  }
+}

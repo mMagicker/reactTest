@@ -7,7 +7,5 @@ export default class TestPlugin extends Plugin {
 
     editor.commands.add("testCommand", new TestPluginCommand(editor));
   }
-  refresh() {
-    console.log("refresh");
-  }
+
 }
