@@ -27,7 +27,7 @@ const editorConfiguration = {
     Paragraph,
     // 自定义组件
     Placeholder,
-    // ExternalDataWidget,
+    ExternalDataWidget,
     ProductPreviewEditing,
     TestPlugin,
   ],

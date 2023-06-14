@@ -1,25 +1,37 @@
-.export-content{
+.export-content {
   border: 1px solid #ccc;
-  .page-break{
+  .page-break {
     page-break-after: always;
   }
-  ul{
+  ul {
     padding-left: 100px;
-    li{
+    li {
       margin-bottom: 10px;
       list-style: none;
       font-family: "霞鹜文楷";
       font-size: 30px;
     }
   }
-  table{
+  table {
     margin: 0 auto;
     margin-bottom: 20px;
     border-collapse: collapse;
     border: 1px solid #ccc;
-    th,td{
+    th,
+    td {
       border: 1px solid #ccc;
       padding: 5px;
+    }
+  }
+  section {
+    padding: 0 100px;
+    h3 {
+      color: #f00;
+      font-size: 30px;
+      font-family: "楷体";
+    }
+    p {
+      text-indent: 100px;
     }
   }
 }

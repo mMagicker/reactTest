@@ -121,7 +121,7 @@ export default class ExternalDataWidgetEditing extends Plugin {
             if (externalValueToShow) {
               domElement.classList.add("external-data-widget-bounce");
               // Remove the animation class when it ends
-              setTimeout(() => domElement.classList.remove("external-data-widget-bounce"), 1100);
+              setTimeout(() => domElement.classList.remove("external-data-widget-bounce"), 500);
             }
           }
         );

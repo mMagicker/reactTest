@@ -19,6 +19,69 @@ export default function Html2Pdf() {
             <li>111</li>
             <li>中国制造</li>
             <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
+            <li>111</li>
+            <li>中国制造</li>
+            <li>测试</li>
           </ul>
           <div className="page-break"></div>
           <h2>page2</h2>
@@ -40,6 +103,14 @@ export default function Html2Pdf() {
               </tr>
             </tbody>
           </table>
+          <div className="page-break"></div>
+          <h2>page3</h2>
+          <section>
+            <h3>中国制造</h3>
+            <p>
+              中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造中国制造
+            </p>
+          </section>
         </div>
       </div>
       <Button onClick={onExport} type="primary">

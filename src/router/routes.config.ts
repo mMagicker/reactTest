@@ -79,6 +79,11 @@ const routes: Route[] = [
         path: "/wangEditor",
         name: "WangEditor",
         component: pages.lib.Wang
+      },
+      {
+        path:"/recordrtc",
+        name: "RecordRTC",
+        component: pages.lib.RecordRTC
       }
     ],
   },
