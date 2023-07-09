@@ -7,6 +7,7 @@ import ThisTest from "./ThisTest";
 import ThisTest2 from "./ThisTest2";
 import UseMemoCom from './UseMemoCom'
 import RefProps from "@/pages/react/RefProps";
+import UseCallback from "@/pages/react/useCallback";
 
 export default {
   Context,
@@ -17,5 +18,6 @@ export default {
   ThisTest,
   ThisTest2,
   UseMemoCom,
-  RefProps
+  RefProps,
+  UseCallback
 }

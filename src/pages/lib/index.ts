@@ -6,6 +6,7 @@ import Html2Canvas from "./Html2/Html2Canvas";
 import G6 from "@/pages/lib/G6";
 import RichText from './RichText';
 import RecordRTC from './RecordRTC';
+import DND from './dnd'
 
 export default {
   ...RichText,
@@ -15,5 +16,6 @@ export default {
   Html2Canvas,
   Html2PDF,
   G6,
-  RecordRTC
+  RecordRTC,
+  DND
 }

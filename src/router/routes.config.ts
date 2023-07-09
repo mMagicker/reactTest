@@ -23,6 +23,11 @@ const routes: Route[] = [
         name: "RefProps",
         component: pages.react.RefProps,
       },
+      {
+        path: "/useCallback",
+        name: "useCallback",
+        component: pages.react.UseCallback,
+      }
     ],
   },
   {
@@ -81,9 +86,14 @@ const routes: Route[] = [
         component: pages.lib.Wang
       },
       {
-        path:"/recordrtc",
+        path: "/recordrtc",
         name: "RecordRTC",
         component: pages.lib.RecordRTC
+      },
+      {
+        path: "/dnd",
+        name: "Dnd",
+        component: pages.lib.DND
       }
     ],
   },
