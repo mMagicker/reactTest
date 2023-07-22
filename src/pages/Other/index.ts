@@ -3,6 +3,7 @@ import SelectedTable from "./SelectedTable";
 import SelectedTableAntd from "./SelectedTableAntd";
 import TableRow from "./TableRow";
 import LazyScroll from "./LazyScroll";
+import LinkForm from "./LinkForm";
 
 export default {
   Drag,
@@ -10,4 +11,5 @@ export default {
   SelectedTableAntd,
   TableRow,
   LazyScroll,
+  LinkForm,
 };

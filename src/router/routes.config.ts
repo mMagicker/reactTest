@@ -39,6 +39,16 @@ const routes: Route[] = [
         name: "Prompt",
         component: pages.router.Prompt,
       },
+      {
+        path: "/useSearch/1",
+        name: "useSearch",
+        component: pages.router.UseSearch,
+      },
+      {
+        path: "/useSearch/2/",
+        name: "useSearch",
+        component: pages.router.UseSearch,
+      },
     ],
   },
   {
@@ -137,6 +147,11 @@ const routes: Route[] = [
         name: "LazyScroll",
         component: pages.other.LazyScroll,
       },
+      {
+        path: "/linkForm",
+        name: "LinkForm",
+        component: pages.other.LinkForm,
+      }
     ],
   },
 ];
