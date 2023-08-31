@@ -1,7 +1,7 @@
-import Prompt from './Prompt'
+// import Prompt from './Prompt'
 import UseSearch from './UseSearch'
 
 export default {
-  Prompt,
+  // Prompt,
   UseSearch,
 }

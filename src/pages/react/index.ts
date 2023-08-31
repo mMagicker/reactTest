@@ -8,6 +8,7 @@ import ThisTest2 from "./ThisTest2";
 import UseMemoCom from './UseMemoCom'
 import RefProps from "@/pages/react/RefProps";
 import UseCallback from "@/pages/react/useCallback";
+import ForwardRef from "@/pages/react/forwardRef";
 
 export default {
   Context,
@@ -19,5 +20,6 @@ export default {
   ThisTest2,
   UseMemoCom,
   RefProps,
-  UseCallback
+  UseCallback,
+  ForwardRef
 }

@@ -1,0 +1,32 @@
+.layout-menu {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	padding: 20px;
+	.menu-wrap {
+		width: 180px;
+		height: 100%;
+		flex: none;
+		border-right: 1px solid #e8e8e8;
+		overflow-y: auto;
+	}
+	.menu-item {
+		padding: 10px 0;
+		.menu-name {
+			font-size: 16px;
+			font-weight: 600;
+			color: #333;
+			margin-bottom: 10px;
+		}
+		a {
+			display: block;
+			padding: 5px 0;
+			font-size: 14px;
+			color: #666;
+		}
+	}
+	.content-wrap {
+		flex: 1;
+		padding: 0 20px;
+	}
+}

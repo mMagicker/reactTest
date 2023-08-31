@@ -7,6 +7,7 @@ import G6 from "@/pages/lib/G6";
 import RichText from './RichText';
 import RecordRTC from './RecordRTC';
 import DND from './dnd'
+import Dom2Image from './Dom2Image'
 
 export default {
   ...RichText,
@@ -17,5 +18,6 @@ export default {
   Html2PDF,
   G6,
   RecordRTC,
-  DND
+  DND,
+  Dom2Image
 }
