@@ -9,6 +9,7 @@ import UseMemoCom from './UseMemoCom'
 import RefProps from "@/pages/react/RefProps";
 import UseCallback from "@/pages/react/useCallback";
 import ForwardRef from "@/pages/react/forwardRef";
+import NodeName from './NodeName'
 
 export default {
   Context,
@@ -21,5 +22,6 @@ export default {
   UseMemoCom,
   RefProps,
   UseCallback,
-  ForwardRef
+  ForwardRef,
+  NodeName
 }

@@ -33,6 +33,11 @@ const routes: Route[] = [
 				name: "ForwardRef",
 				component: pages.react.ForwardRef,
 			},
+			{
+				path: "nodeName",
+				name: "NodeName",
+				component: pages.react.NodeName,
+			},
 		],
 	},
 	// {
@@ -114,6 +119,11 @@ const routes: Route[] = [
 				path: "dnd",
 				name: "Dnd",
 				component: pages.lib.DND,
+			},
+			{
+				path: "fusionTree",
+				name: "FusionTree",
+				component: pages.lib.FusionTree,
 			},
 		],
 	},

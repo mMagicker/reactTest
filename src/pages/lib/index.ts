@@ -8,6 +8,7 @@ import RichText from './RichText';
 import RecordRTC from './RecordRTC';
 import DND from './dnd'
 import Dom2Image from './Dom2Image'
+import FusionTree from './FusionTree';
 
 export default {
   ...RichText,
@@ -19,5 +20,6 @@ export default {
   G6,
   RecordRTC,
   DND,
-  Dom2Image
+  Dom2Image,
+  FusionTree
 }
