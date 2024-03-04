@@ -1,10 +1,11 @@
-import lib from './lib'
-import other from './other'
-import react from './react'
-import router5 from './router_v5'
-import router6 from './router_v6'
-import source from './source'
-import map from './map'
+import lib from "./lib";
+import other from "./other";
+import react from "./react";
+import router5 from "./router_v5";
+import router6 from "./router_v6";
+import source from "./source";
+import map from "./map";
+import ahooks from "./ahooks";
 
 export default {
   lib,
@@ -14,4 +15,5 @@ export default {
   router6,
   source,
   map,
-}
+  ahooks,
+};

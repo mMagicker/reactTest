@@ -9,6 +9,7 @@ import RecordRTC from './RecordRTC';
 import DND from './dnd'
 import Dom2Image from './Dom2Image'
 import FusionTree from './FusionTree';
+import ReactImage from './react-image';
 
 export default {
   ...RichText,
@@ -21,5 +22,6 @@ export default {
   RecordRTC,
   DND,
   Dom2Image,
-  FusionTree
+  FusionTree,
+  ReactImage
 }

@@ -1,51 +1,40 @@
-import React, { useEffect, useState, memo, useRef } from 'react';
+/**
+ * react 组件嵌套, 性能优化
+ */
+import React, { useEffect, useState, memo, useRef } from "react";
 
-const SonCom: React.FC<{ name: string }> = (props) => {
+const SonCom = (props: { data: { number: number; name: string } }) => {
+  const { data } = props;
+  useEffect(() => {
+    console.log("son effect");
+  }, []);
 
-	useEffect(() => {
-		console.log('son effect')
-	}, [])
+  return <div>{data.number}</div>;
+};
 
-	return <div>
-		{ props.name }
-	</div>
-}
+const MemoSon = memo(SonCom);
 
-const MemoSon = memo(SonCom)
+const MyComponent = () => {
+  const [data, setData] = useState({
+    number: 1,
+    name: "name",
+  });
 
+  const onClick = () => {
+    setData({
+      ...data,
+      number: data.number + 1,
+    });
+	};
 
-	const MyComponent = () => {
-
-	// const [number, setNumber] = useState<number>(1)
-	// const [name, setName] = useState<string>('name')
-	// const firstLoad = useRef(true)
-	//
-	// const onClick = () => {
-	// 	setNumber((number) => {
-	// 		return number + 1
-	// 	})
-	// }
-
-	// useEffect(() => {
-	// 	let timer = setInterval(() => {
-	// 		setNumber((number) => number + 1)
-	// 	}, 2000)
-	// 	return () => {
-	// 		clearInterval(timer)
-	// 	}
-	// }, [])
-	useEffect(() => {
-		console.log('father effect')
-	}, [])
-
-	return (
-		<div>
-			{/*{ number }*/}
-			{/*<button onClick={ onClick }>click</button>*/}
-			{/*<SonCom name={ name } />*/ }
-			{/*<MemoSon name={ name } />*/ }
-		</div>
-	);
+  return (
+    <div>
+      {data.number}
+      <button onClick={onClick}>click</button>
+      <SonCom data={data} />
+      <MemoSon data={data} />
+    </div>
+  );
 };
 
 export default MyComponent;
